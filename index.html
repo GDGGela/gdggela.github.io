@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -102,6 +103,19 @@
             <li>Prezzo: FREE ACCESS!</li>
         </ul>
     </section>
+    <section>
+        <div id="map" style="height: 400px;"></div>
+    </section>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        var map = L.map('map').setView([37.073, 14.243], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+        }).addTo(map);
+        L.marker([37.07607, 14.2246]).addTo(map) 
+            .bindPopup('Linux Day 2024 - Gela<br>ITT "E. Morselli"')
+            .openPopup();
+    </script>
 
 </body>
 </html>
